@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 21:05:44 by tmatis            #+#    #+#             */
-/*   Updated: 2021/07/16 12:03:04 by tmatis           ###   ########.fr       */
+/*   Created: 2021/07/16 11:52:15 by tmatis            #+#    #+#             */
+/*   Updated: 2021/07/16 12:08:43 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
 int	main(void)
 {
-	Zombie	*z1 = Zombie::newZombie("Bob");
-	Zombie	*z2 = Zombie::newZombie("Alice");
-
-	Zombie::randomChump("Martin");
-	Zombie::randomChump("Theo");
-
-	delete z1;
-	delete z2;
+	std::string myString = "HI THIS IS BRAIN";
+	std::string *stringPTR = &myString;
+	std::string &stringREF = myString;
+	
+	std::cout << "string address: " << &myString << std::endl;
+	std::cout << "string address form stringPTR: " << stringPTR << std::endl;
+	std::cout << "string address form stringREF: " << &stringREF << std::endl;
+	std::cout << "string from stringPTR: " << *stringPTR << std::endl;
+	std::cout << "string from stringREF: " << stringREF << std::endl;
 }

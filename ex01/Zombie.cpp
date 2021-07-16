@@ -5,32 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 20:51:55 by tmatis            #+#    #+#             */
-/*   Updated: 2021/07/16 12:02:36 by tmatis           ###   ########.fr       */
+/*   Created: 2021/07/16 11:45:05 by tmatis            #+#    #+#             */
+/*   Updated: 2021/07/16 12:01:12 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Zombie.hpp"
-
-/* ************************************************************************** */
-/*                                     DATA INIT                              */
-/* ************************************************************************** */
+#include <iostream>
 
 /* ************************************************************************** */
 /*                           CONSTRUCTOR - DESTRUCTOR                         */
 /* ************************************************************************** */
 
-Zombie::Zombie(const std::string name) : _name(name) {}
+Zombie::Zombie(void) {}
 
 Zombie::~Zombie(void)
 {
-	this->_zombieLog("is destroyed");
+	this->_zombieLog("i'm destroyed");
 }
 
 /* ************************************************************************** */
 /*                                MEMBER FONCTIONS                            */
 /* ************************************************************************** */
+
+void	Zombie::assignName(const std::string name)
+{
+	this->_name = name;
+}
 
 void	Zombie::_zombieLog(const std::string msg) const
 {
